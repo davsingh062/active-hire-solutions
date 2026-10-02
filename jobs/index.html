@@ -43,23 +43,60 @@
 
 
     <!-- NAVIGATION -->
+ <!-- NAVIGATION -->
+ <nav id="main-nav"
+ style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px">
 
-    
+<a href="/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Home
+</a>
 
-      <a href="/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Home</a>
+<a href="/about/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+About
+</a>
 
-      <a href="/about/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">About</a>
+<a href="/candidates/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Candidates
+</a>
 
-      <a href="/candidates/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Candidates</a>
+<a href="/employers/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Employers
+</a>
 
-      <a href="/employers/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Employers</a>
+<a href="/services/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Services
+</a>
 
-      <a href="/services/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Services</a>
+<a href="/jobs/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Jobs
+</a>
 
-      <a href="/jobs/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Jobs</a>
+<a href="/contact/" style="color:#000000;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:6px">
+Contact
+</a>
 
-      <a href="/contact/" style="color:#12344d;text-decoration:none;font-size:14px;font-weight:600;padding:8px 3px">Contact</a>
+</nav>
+<script>
+(function () {
 
+ var currentPath =
+   window.location.pathname.replace(/\/+$/, '') || '/';
+
+ document.querySelectorAll('#main-nav a').forEach(function (link) {
+
+   var linkPath =
+     new URL(link.href, window.location.origin)
+       .pathname
+       .replace(/\/+$/, '') || '/';
+
+   if (currentPath === linkPath) {
+     link.style.background =  'rgba(18,52,77,0.25)';
+   }
+
+ });
+
+})();
+</script>
     
 
   </div>
@@ -83,12 +120,12 @@
         CAREER OPPORTUNITIES
       </div>
 
-      <h1 style="font-size:48px;line-height:1.2;margin:0 0 20px;font-weight:800;color:#ffffff">
+      <h1 style="font-size:42px;line-height:1.2;margin:0 0 20px;color:#ffffff">
         Find Your Next
         <span style="color:#55d6c2"> Opportunity</span>
       </h1>
 
-      <p style="font-size:18px;line-height:1.7;color:#e5edf7;max-width:760px;margin:0 auto 30px">
+      <p style="font-size:19px;line-height:1.7;color:#e5edf7;max-width:760px;margin:0 auto">
         Explore current job opportunities from Active Hire Solutions
         and discover roles that may match your skills, experience
         and career goals.
@@ -159,34 +196,8 @@
 
       </div>
 
-
-      &lt;!--
-        WEEKLY JOB POSTING TEMPLATE
-
-        To publish a new vacancy, copy the <article> block below,
-        replace the placeholder values, and paste it above the
-        "NO CURRENT OPENINGS" message.
-
-        Fields to update:
-        - Sector
-        - Job title
-        - Company / Client Name
-        - Location
-        - Employment type
-        - Experience
-        - Job description
-        - Key skills
-        - Application deadline (optional)
-        - Apply link
-
-        IMPORTANT:
-        Do not leave placeholder text visible on the live website.
-      --&gt;
-
-
       <!-- EXAMPLE JOB ARTICLE TEMPLATE - COPY FOR EACH LIVE JOB -->
 
-      &lt;!--
       <article style="background:#ffffff;border-radius:12px;padding:32px;margin-bottom:22px;box-shadow:0 5px 20px rgba(0,0,0,0.05);border-left:5px solid #0d7c86">
 
         <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-start">
@@ -234,7 +245,6 @@
         </p>
 
       </article>
-      --&gt;
 
 
       <!-- NO CURRENT OPENINGS -->
