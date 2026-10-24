@@ -127,6 +127,36 @@
     @media(max-width:1000px){.nav-links a{font-size:.86rem!important;padding:9px 8px!important}.brand-name{font-size:1.12rem!important}.brand-tag{font-size:.6rem!important}}
     @media(max-width:760px){.topbar{font-size:.8rem!important}.nav-links a{font-size:.98rem!important}.brand-name{font-size:.95rem!important}.brand-tag{font-size:.52rem!important}.nav .btn-small{font-size:.8rem!important;padding:9px 12px!important}}
 
+  
+    /* Header sizing tuned to the supplied original screenshot */
+    .nav.container{width:min(1540px,calc(100% - 80px))!important;gap:26px!important}
+    .topbar .container{width:min(1540px,calc(100% - 80px))!important}
+    .brand{gap:10px!important;min-width:390px!important}
+    .brand img,.brand .brand-mark{width:78px!important;height:78px!important;object-fit:contain!important;flex:0 0 78px!important}
+    .brand-name{font-size:1.48rem!important;letter-spacing:-.035em!important}
+    .brand-tag{font-size:.76rem!important;letter-spacing:.14em!important;margin-top:7px!important}
+    .nav-links{gap:7px!important;flex:1 1 auto!important;justify-content:center!important}
+    .nav-links a{font-size:1rem!important;font-weight:600!important;padding:11px 12px!important;white-space:nowrap!important}
+    .nav .btn-small{display:inline-flex!important;flex:0 0 auto!important;white-space:nowrap!important;min-width:154px!important;padding:14px 23px!important;font-size:1rem!important;line-height:1.2!important;border-radius:999px!important}
+    @media(max-width:1250px){
+      .nav.container{width:calc(100% - 36px)!important;gap:12px!important}
+      .brand{min-width:300px!important;gap:7px!important}
+      .brand img,.brand .brand-mark{width:64px!important;height:64px!important;flex-basis:64px!important}
+      .brand-name{font-size:1.22rem!important}
+      .brand-tag{font-size:.62rem!important;letter-spacing:.1em!important}
+      .nav-links{gap:0!important}
+      .nav-links a{font-size:.88rem!important;padding:9px 7px!important}
+      .nav .btn-small{min-width:132px!important;padding:12px 15px!important;font-size:.9rem!important}
+    }
+    @media(max-width:760px){
+      .nav.container{width:calc(100% - 32px)!important}
+      .brand{min-width:0!important;gap:5px!important}
+      .brand img,.brand .brand-mark{width:48px!important;height:48px!important;flex-basis:48px!important}
+      .brand-name{font-size:.95rem!important}
+      .brand-tag{font-size:.5rem!important;letter-spacing:.07em!important}
+      .nav .btn-small{display:none!important}
+    }
+
   </style>
   <script type="application/ld+json">
   {
