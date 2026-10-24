@@ -363,7 +363,56 @@
       }
     }
 
-  </style>
+  
+    /* Independent hover states: only the contact card under the pointer changes. */
+    .contact-cards .contact-link {
+      position: relative;
+      background: #ffffff0b;
+      border-color: #ffffff26;
+      box-shadow: none;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .contact-cards .contact-link:hover,
+    .contact-cards .contact-link:focus-visible {
+      background: var(--ink) !important;
+      border-color: var(--gold) !important;
+      box-shadow: 0 0 0 1px var(--gold) !important;
+      transform: translateY(-2px);
+    }
+    .contact-cards .contact-link:hover .service-icon,
+    .contact-cards .contact-link:focus-visible .service-icon {
+      background: var(--gold) !important;
+      color: var(--ink) !important;
+    }
+
+    /* Our Approach cards use the same navy hover color as the Let's talk button. */
+    .approach-section .steps-grid .step {
+      position: relative;
+      background: transparent;
+      transition: background-color .22s ease, color .22s ease, box-shadow .22s ease;
+    }
+    .approach-section .steps-grid .step:hover,
+    .approach-section .steps-grid .step:focus-within {
+      background: var(--ink) !important;
+      color: var(--paper) !important;
+      box-shadow: inset 0 0 0 1px var(--ink) !important;
+    }
+    .approach-section .steps-grid .step:hover h3,
+    .approach-section .steps-grid .step:hover p,
+    .approach-section .steps-grid .step:focus-within h3,
+    .approach-section .steps-grid .step:focus-within p {
+      color: var(--paper) !important;
+    }
+    .approach-section .steps-grid .step:hover .step-icon,
+    .approach-section .steps-grid .step:focus-within .step-icon {
+      color: var(--gold) !important;
+    }
+    .approach-section .steps-grid .step:hover .step-num,
+    .approach-section .steps-grid .step:focus-within .step-num {
+      color: var(--gold) !important;
+    }
+
+</style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
