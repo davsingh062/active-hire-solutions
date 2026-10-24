@@ -179,6 +179,20 @@
       isolation:auto!important;
     }
 
+  
+    /* Hero spacing tuned to the supplied original screenshot */
+    .hero-grid{grid-template-columns:minmax(0,720px) minmax(300px,1fr);gap:56px}
+    .hero-grid>div:first-child{width:100%;max-width:720px;margin-left:clamp(0px,7vw,110px)}
+    .hero h1{max-width:720px;font-size:clamp(3.4rem,7.4vw,6.6rem);line-height:.98;letter-spacing:-.075em}
+    .hero h1 .serif{display:inline-block;color:#f0ad3e!important}
+    .hero-lead{max-width:700px;font-size:1.12rem;line-height:1.65;margin-top:28px}
+    .hero-actions{max-width:720px;gap:14px;margin-top:34px}
+    .action-card{min-height:104px;padding:20px 24px;border-radius:28px}
+    .action-card small{font-size:.72rem}
+    .action-card strong{font-size:1.18rem}
+    @media(max-width:1000px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:32px}.hero-grid>div:first-child{margin-left:clamp(0px,3vw,30px)}.hero h1{font-size:clamp(3.1rem,6.4vw,5.2rem)}}
+    @media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero-grid>div:first-child{margin-left:0}.hero h1{font-size:clamp(3rem,13vw,5rem)}.hero-lead{font-size:1rem}.action-card{min-height:88px;padding:16px;border-radius:20px}}
+
   </style>
   <script type="application/ld+json">
   {
@@ -203,7 +217,7 @@
   <main>
     <section class="hero" id="home"><div class="container hero-grid"><div>
       <span class="pill"><span class="dot"></span> Recruitment &amp; Staffing Consultancy</span>
-      <h1>Where talent<br>meets <span class="serif">opportunity.</span></h1>
+      <h1>Where talent<br>meets<br><span class="serif">opportunity.</span></h1>
       <p class="hero-lead">We help candidates discover careers that actually fit — and help companies across IT, Non-IT and BPO find the people they need to grow.</p>
       <div class="hero-actions"><a class="action-card" href="#employers"><span><small>For companies</small><strong>I'm hiring</strong></span><span class="action-arrow">→</span></a><a class="action-card light" href="#candidates"><span><small>For candidates</small><strong>I'm job hunting</strong></span><span class="action-arrow">→</span></a></div>
     </div><div class="hero-visual"><div class="hero-frame"></div><img class="hero-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85" alt="Professional candidate in a modern workplace" fetchpriority="high"><div class="float-card float-one"><div class="float-icon">✓</div><div><strong>Profile matched</strong><span>Skills · goals · culture</span></div></div><div class="float-card float-two"><div class="float-icon">✦</div><div><strong>Right fit, first time</strong><span>People before paperwork</span></div></div></div></div></section>
