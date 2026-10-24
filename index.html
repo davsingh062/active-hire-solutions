@@ -258,6 +258,27 @@
       .footer-main{padding:40px 20px!important}
     }
 
+  
+    /* Correct the oversized full-width layout: use the original centered content frame */
+    #services>.container{width:min(1540px,calc(100% - 80px))!important;margin-left:auto!important;margin-right:auto!important}
+    #services .services-head{width:100%!important;align-items:flex-end!important;gap:48px!important}
+    #services .services-head .section-head{width:100%!important;max-width:800px!important;flex:0 1 800px!important}
+    #services .services-head .section-head h2{font-size:clamp(2.25rem,3.8vw,3.55rem)!important;line-height:1.05!important;letter-spacing:-.055em!important}
+    #services .services-head>.btn-outline{flex:0 0 auto!important;margin-left:auto!important;padding:16px 28px!important;font-size:.95rem!important}
+    @media(max-width:1000px){
+      #services>.container{width:calc(100% - 48px)!important}
+      #services .services-head{gap:24px!important}
+      #services .services-head .section-head{max-width:650px!important}
+      #services .services-head .section-head h2{font-size:clamp(2rem,4.6vw,3rem)!important}
+    }
+    @media(max-width:760px){
+      #services>.container{width:calc(100% - 32px)!important}
+      #services .services-head{display:block!important}
+      #services .services-head .section-head{max-width:100%!important}
+      #services .services-head .section-head h2{font-size:clamp(1.9rem,8vw,2.7rem)!important}
+      #services .services-head>.btn-outline{margin:22px 0 0!important}
+    }
+
   </style>
   <script type="application/ld+json">
   {
