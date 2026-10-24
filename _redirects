@@ -1,0 +1,7 @@
+# Redirect old section URLs to the corresponding section on the single-page homepage.
+/about/ /#about 301
+/candidates/ /#candidates 301
+/employers/ /#employers 301
+/services/ /#services 301
+/jobs/ /#jobs 301
+/contact/ /#contact 301
