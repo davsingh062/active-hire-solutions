@@ -1,0 +1,7 @@
+# Legacy multi-page URLs now point to the matching section in the single-page homepage.
+/about/ /#about 301
+/candidates/ /#candidates 301
+/employers/ /#employers 301
+/services/ /#services 301
+/jobs/ /#jobs 301
+/contact/ /#contact 301
