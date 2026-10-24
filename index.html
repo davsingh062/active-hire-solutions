@@ -279,6 +279,33 @@
       #services .services-head>.btn-outline{margin:22px 0 0!important}
     }
 
+  
+    /* Keep every section aligned to the same left/right content guides as the hero */
+    .hero>.container,
+    #about>.container,
+    #services>.container,
+    .approach-section>.container,
+    #jobs>.container,
+    .audiences-section>.container,
+    .why-section>.container,
+    #contact>.container{
+      width:min(1300px,calc(100% - 96px))!important;
+      max-width:1300px!important;
+      margin-left:auto!important;
+      margin-right:auto!important;
+    }
+    #services>.container{width:min(1300px,calc(100% - 96px))!important}
+    @media(max-width:1000px){
+      .hero>.container,#about>.container,#services>.container,.approach-section>.container,#jobs>.container,.audiences-section>.container,.why-section>.container,#contact>.container{
+        width:calc(100% - 48px)!important;
+      }
+    }
+    @media(max-width:760px){
+      .hero>.container,#about>.container,#services>.container,.approach-section>.container,#jobs>.container,.audiences-section>.container,.why-section>.container,#contact>.container{
+        width:calc(100% - 32px)!important;
+      }
+    }
+
   </style>
   <script type="application/ld+json">
   {
