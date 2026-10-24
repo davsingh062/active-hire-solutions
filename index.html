@@ -170,6 +170,15 @@
     #services .sector-card:hover{border-color:var(--ink)!important;box-shadow:none!important}
     @media(max-width:760px){#services .sector-top{padding:22px 20px 16px!important}#services .sector-card ul{padding:6px 20px 22px!important}#services .sector-card li{font-size:.8rem!important;padding:6px 10px!important;white-space:normal!important}}
 
+  
+    /* Blend the JPEG's white matte into the cream header; keep the footer logo unchanged. */
+    .nav-wrap .brand img,
+    .nav-wrap .brand .brand-mark{
+      mix-blend-mode:multiply!important;
+      background:transparent!important;
+      isolation:auto!important;
+    }
+
   </style>
   <script type="application/ld+json">
   {
