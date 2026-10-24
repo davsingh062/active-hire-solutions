@@ -329,6 +329,31 @@
       }
     }
 
+
+    /* Match the original generous page gutters across all sections.
+       Keep the wider shared content frame instead of the overly narrow 1300px frame. */
+    .container,
+    .topbar .container,
+    .footer-bottom .container{
+      width:min(1480px,calc(100% - 96px))!important;
+      max-width:1480px!important;
+      margin-left:auto!important;
+      margin-right:auto!important;
+    }
+    .hero-grid>div:first-child{margin-left:clamp(0px,3vw,30px)!important}
+    #services>.container{width:min(1480px,calc(100% - 96px))!important}
+    @media(max-width:1000px){
+      .container,.topbar .container,.footer-bottom .container{
+        width:calc(100% - 64px)!important;
+      }
+      .hero-grid>div:first-child{margin-left:0!important}
+    }
+    @media(max-width:760px){
+      .container,.topbar .container,.footer-bottom .container{
+        width:calc(100% - 36px)!important;
+      }
+    }
+
 </style>
   <script type="application/ld+json">
   {
