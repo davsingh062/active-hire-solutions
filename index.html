@@ -578,8 +578,12 @@
         contactSubmit.textContent='Sending…';
         try{
           const response=await fetch(contactApiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-          const result=await response.json().catch(()=>({}));
-          if(!response.ok||!result.ok) throw new Error(result.error||'We could not send your enquiry. Please try again.');
+          let result=await response.json().catch(()=>({}));
+          // Some API responses may be JSON-encoded twice; normalize string responses.
+          if(typeof result==='string'){
+            try{result=JSON.parse(result);}catch{result={};}
+          }
+          if(!response.ok||!result.ok) throw new Error(result.error||result.message||'We could not send your enquiry. Please try again.');
           contactForm.reset();
           contactStatus.textContent='Thank you! Your enquiry has been received. Our team will be in touch.';
           contactStatus.dataset.state='success';
