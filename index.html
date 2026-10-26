@@ -92,6 +92,28 @@
     .contact-link:hover{background-color:rgba(16,29,54,.045)}
 
   
+
+    /* Touch-device card highlighting: persist the highlight after a tap on iPhone/iPad and Android. */
+    @media (hover: none) and (pointer: coarse) {
+      .service-card.is-tapped,
+      .audience.is-tapped,
+      .sector-card.is-tapped,
+      .step.is-tapped,
+      .job-feature.is-tapped,
+      .jobs-note.is-tapped,
+      .apply-step.is-tapped,
+      .why-values article.is-tapped,
+      .contact-link.is-tapped {
+        border-color: var(--ink) !important;
+        box-shadow: 0 0 0 1px var(--ink), 0 10px 28px rgba(16, 29, 54, .10);
+      }
+      .contact-link.is-tapped { background-color: rgba(16, 29, 54, .045); }
+      .service-card.is-tapped,
+      .step.is-tapped,
+      .apply-step.is-tapped,
+      .why-values article.is-tapped { transform: translateY(-2px); }
+    }
+
     /* Gold email and phone accents in header and footer, as in the reference */
     .topbar a,.footer-about ul a{display:inline-flex;align-items:center;gap:8px}
     .topbar a .contact-symbol,.footer-about ul a .contact-symbol{color:var(--gold);font-size:1.15em;line-height:1;flex:0 0 auto}
@@ -596,7 +618,29 @@
         }
       });
     }
-    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // On touch screens, make card highlighting persist after the tap.
+    // Only one card in a group stays highlighted at a time; desktop hover remains unchanged.
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      const highlightSelectors = [
+        '.service-card', '.audience', '.sector-card', '.step',
+        '.job-feature', '.jobs-note', '.apply-step',
+        '.why-values article', '.contact-link'
+      ].join(',');
+      document.querySelectorAll(highlightSelectors).forEach((card) => {
+        card.addEventListener('click', (event) => {
+          // Let links and buttons keep their normal navigation/action.
+          if (event.target.closest('a,button,input,select,textarea')) return;
+          const wasSelected = card.classList.contains('is-tapped');
+          card.parentElement?.querySelectorAll(':scope > .is-tapped').forEach((item) => {
+            item.classList.remove('is-tapped');
+          });
+          card.classList.toggle('is-tapped', !wasSelected);
+        });
+      });
+    }
+
+        document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
